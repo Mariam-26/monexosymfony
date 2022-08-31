@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ateliers{% endblock %}
+
+{% block body %}
+    <h1>Ateliers</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ atelier.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ atelier.image }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ atelier.titre }}</td>
+            </tr>
+            <tr>
+                <th>Max_participants</th>
+                <td>{{ atelier.maxParticipants }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary btn-sm "><a href="{{ path('app_ateliers_index') }}" class="text-dark">RETOUR</a></button>
+
+    <button type="button" class="btn btn-primary btn-sm "><a href="{{ path('app_ateliers_edit', {'id': atelier.id}) }}"  class="text-dark">EDITER</a></button>
+
+    
+
+   
+
+    
+
+    {{ include('ateliers/_delete_form.html.twig') }}
+{% endblock %}
