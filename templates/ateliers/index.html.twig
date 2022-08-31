@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos ateliers{% endblock %}
+
+{% block body %}
+    <h1 class="display-3 text-center p-5 text-uppercase"> Nos ateliers</h1>
+
+    <div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Titre</th>
+                <th>Max_participants</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for atelier in ateliers %}
+            <tr>
+                <td>ID</td>
+                 <td><img src="{{ atelier.image }}" alt="ORDI" class="img-fluid"></td>
+                <td>Titre</td>
+                <td>{{ atelier.maxParticipants }}</td>
+                <td>
+                    <a href="{{ path('app_ateliers_show', {'id': atelier.id}) }}" class="btn btn-primary">show</a>
+                    
+                    <a href="{{ path('app_ateliers_edit', {'id': atelier.id}) }}" class="btn btn-warning">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun atlier trouvé ?</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-center p-3">
+            <a href="{{ path('app_ateliers_new') }}" class="btn btn-success radius">Nouveau atelier</a>
+        </div>
+</div>
+
+    
+{% endblock %}
+
+ 
