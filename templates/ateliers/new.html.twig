@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'un article{% endblock %}
+
+{% block body %}
+    <h1>Ajout d'un article</h1>
+ <div class="container">
+    {{ include('ateliers/_form.html.twig') }}
+
+    <a href="{{ path('app_ateliers_index') }}" class="btn btn-success">Voir tous les ateliers</a>
+    </div>
+
+{% endblock %}
